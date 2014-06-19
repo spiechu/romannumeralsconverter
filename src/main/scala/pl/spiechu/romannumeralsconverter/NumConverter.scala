@@ -123,10 +123,6 @@ object NumConverter {
     }
 
     for (char <- sequence) {
-      if (!flippedNumConversions.contains(char)) {
-        throw new IllegalArgumentException(s"Illegal char: $char")
-      }
-
       val numChar = flippedNumConversions.get(char).get
 
       if (previousVar.isEmpty) {
