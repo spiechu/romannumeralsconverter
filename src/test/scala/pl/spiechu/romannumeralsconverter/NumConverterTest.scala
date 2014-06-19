@@ -12,6 +12,9 @@ class NumConverterTest extends FlatSpec with Matchers {
       9 -> "IX",
       23 -> "XXIII",
       18 -> "XVIII",
+      1904 -> "MCMIV",
+      1954 -> "MCMLIV",
+      1990 -> "MCMXC",
       2014 -> "MMXIV"
     )
 
