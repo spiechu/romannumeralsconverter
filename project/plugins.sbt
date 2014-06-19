@@ -1,6 +1,3 @@
-resolvers ++= Seq(
-  "sbt-plugin-releases-repo" at "http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases",
-  "sbt-idea-repository" at "http://mpeltonen.github.io/maven/"
-)
+resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
-addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "0.98.2")
+addSbtPlugin("com.github.theon" %% "xsbt-coveralls-plugin" % "0.0.5-SNAPSHOT")
