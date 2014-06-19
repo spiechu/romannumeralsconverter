@@ -1,4 +1,4 @@
 romannumeralsconverter
 ======================
 
-Small Scala project to test Scala environment
+This is small, one-day project to test some Scala stuff.
