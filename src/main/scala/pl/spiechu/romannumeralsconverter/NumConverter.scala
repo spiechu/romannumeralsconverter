@@ -56,7 +56,12 @@ object NumConverter {
       }
     }
 
-    RomanNum(romanNumStr toString())
+    val readyRomanStr = romanNumStr toString()
+    if (!validateRomanStrSeq(convertToCharSeq(readyRomanStr))) {
+      throw new IllegalArgumentException("Illegal char sequence")
+    }
+
+    RomanNum(readyRomanStr)
   }
 
   private def convertRoman(romanNum: RomanNum) = {
@@ -111,7 +116,11 @@ object NumConverter {
 
   private def validateRomanStrSeq(sequence: List[String]): Boolean = {
     var previousVar: Option[Int] = None
-    var ocurrencies = 0
+    var occurrences = 0
+
+    if (sequence.length == 0) {
+      throw new IllegalArgumentException("Empty sequence")
+    }
 
     for (char <- sequence) {
       if (!flippedNumConversions.contains(char)) {
@@ -121,7 +130,7 @@ object NumConverter {
       val numChar = flippedNumConversions.get(char).get
 
       if (previousVar.isEmpty) {
-        ocurrencies += 1
+        occurrences += 1
         previousVar = Option(numChar)
       }
       else {
@@ -129,8 +138,8 @@ object NumConverter {
           return false
         }
         else if (previousVar.get == numChar) {
-          ocurrencies += 1
-          if (ocurrencies > 3) {
+          occurrences += 1
+          if (occurrences > 3) {
             return false
           }
 
@@ -141,7 +150,7 @@ object NumConverter {
           }
         }
         else {
-          ocurrencies = 0
+          occurrences = 0
         }
         previousVar = Option(numChar)
       }

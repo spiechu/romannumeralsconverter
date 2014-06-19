@@ -102,6 +102,38 @@ class NumConverterTest extends FlatSpec with Matchers {
     }
   }
 
+  it should "throw IllegalArgumentException when feeded with more than 3 the same numerals" in {
+    val testData = List(
+      "IIII",
+      "XXXX",
+      "CCCCC",
+      "MMMM"
+    )
+
+    for (roman <- testData) {
+      val romanObj = RomanNum(roman)
+
+      intercept[IllegalArgumentException] {
+        NumConverter convert romanObj
+      }
+    }
+  }
+
+  it should "throw IllegalArgumentException when num is 0 or is greater than 3999" in {
+    val testData = List(
+      0,
+      4000,
+      4567,
+      23456
+    )
+
+    for (arabic <- testData) {
+      intercept[IllegalArgumentException] {
+        NumConverter convert ArabicNum(arabic)
+      }
+    }
+  }
+
   "ArabicNum" should "be able to return RomanNum counterpart directly by convert function" in {
     val romanNum = ArabicNum(1).convert
     romanNum should be(RomanNum("I"))
