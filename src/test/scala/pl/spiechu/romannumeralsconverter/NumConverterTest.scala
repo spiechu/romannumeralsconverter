@@ -4,7 +4,7 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class NumConverterTest extends FlatSpec with Matchers {
 
-  "Roman Converter" should "take a list of integers and return appropriate roman numerals counterparts" in {
+  "NumConverter" should "take a list of integers and return appropriate roman numerals counterparts" in {
     val testData = List(
       3 -> "III",
       4 -> "IV",
@@ -32,7 +32,11 @@ class NumConverterTest extends FlatSpec with Matchers {
       "IV" -> 4,
       "V" -> 5,
       "XXIII" -> 23,
-      "XVIII" -> 18
+      "XVIII" -> 18,
+      "MCMIV" -> 1904,
+      "MCMLIV" -> 1954,
+      "MCMXC" -> 1990,
+      "MMXIV" -> 2014
     )
 
     for ((roman, arabic) <- testData) {
@@ -59,6 +63,7 @@ class NumConverterTest extends FlatSpec with Matchers {
         NumConverter convert romanObj
       }
 
+      // check if illegal char was displayed in exception msg
       ex.getMessage should be(s"Illegal char: $errChar")
     }
   }
