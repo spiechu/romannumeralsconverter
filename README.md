@@ -11,6 +11,8 @@ Converter provides easy way to transform Arabic numbers to Roman numerals and vi
 
 Inspired by [XSolve Code Kata #1](https://github.com/xsolve-pl/code-kata/tree/master/01-roman-numerals).
 
+More info on my [blog post](http://spiechu.pl/2014/06/21/roman-numerals-converter-code-kata-summary).
+
 ## Usage
 
 Basically it is enough that you instantiate one of `ConvertableNum` case classes and execute `convert`.
