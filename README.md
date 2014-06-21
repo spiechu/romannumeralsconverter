@@ -9,6 +9,8 @@ This is small, one-day project to test some Scala stuff.
 
 Converter provides easy way to transform Arabic numbers to Roman numerals and vice versa.
 
+Inspired by [XSolve Code Kata #1](https://github.com/xsolve-pl/code-kata/tree/master/01-roman-numerals).
+
 ## Usage
 
 Basically it is enough that you instantiate one of `ConvertableNum` case classes and execute `convert`.
