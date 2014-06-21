@@ -8,5 +8,4 @@ jdk:
   - openjdk6
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION test
-  - "sbt coveralls"
+  - sbt ++$TRAVIS_SCALA_VERSION test coveralls
